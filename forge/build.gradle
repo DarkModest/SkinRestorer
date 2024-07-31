@@ -5,6 +5,8 @@ plugins {
     id 'net.minecraftforge.gradle'
     id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+
+    id 'multiloader-publish'
 }
 
 mixin {

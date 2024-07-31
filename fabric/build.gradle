@@ -1,6 +1,8 @@
 plugins {
     id 'multiloader-loader'
     id 'fabric-loom'
+
+    id 'multiloader-publish'
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"

@@ -1,6 +1,8 @@
 plugins {
     id 'multiloader-loader'
     id 'net.neoforged.moddev'
+    
+    id 'multiloader-publish'
 }
 
 neoForge {
