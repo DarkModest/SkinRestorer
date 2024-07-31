@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "${forge_loader_version_range}"
 license = "${license}"
-issueTrackerURL = "https://github.com/Suiranoil/SkinRestorer/issues"
+issueTrackerURL = "${mod_issues}"
 
 [[mods]]
 modId = "${mod_id}"
@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "${mod_name}"
 authors = "${mod_author}"
 logoFile = "assets/${mod_id}/icon.png"
-displayURL = "https://www.curseforge.com/minecraft/mc-mods/skinrestorer"
+displayURL = "${mod_homepage}"
 description = '''${description}'''
 
 [[dependencies.${mod_id}]]

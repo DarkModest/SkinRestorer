@@ -8,9 +8,9 @@
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://www.curseforge.com/minecraft/mc-mods/skinrestorer",
-        "sources": "https://github.com/Suiranoil/SkinRestorer",
-        "issues": "https://github.com/Suiranoil/SkinRestorer/issues"
+        "homepage": "${mod_homepage}",
+        "sources": "${mod_sources}",
+        "issues": "${mod_issues}"
     },
     "icon": "assets/${mod_id}/icon.png",
     "license": "${license}",
