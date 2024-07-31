@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "${neoforge_loader_version_range}"
+loaderVersion = "${forge_loader_version_range}"
 license = "${license}"
 issueTrackerURL = "https://github.com/Suiranoil/SkinRestorer/issues"
 
@@ -10,21 +10,18 @@ displayName = "${mod_name}"
 authors = "${mod_author}"
 logoFile = "assets/${mod_id}/icon.png"
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/skinrestorer"
-description = "${description}"
-
-[[mixins]]
-config = "${mod_id}.mixins.json"
+description = '''${description}'''
 
 [[dependencies.${mod_id}]]
-modId = "neoforge"
-type = "required"
-versionRange = "[${neoforge_version},)"
+modId = "forge"
+mandatory = true
+versionRange = "[${forge_version},)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "minecraft"
-type = "required"
+mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
