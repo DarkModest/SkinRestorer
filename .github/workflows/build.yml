@@ -24,8 +24,8 @@ jobs:
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
 
-      - name: Upload built JAR
+      - name: Upload built JARs
         uses: actions/upload-artifact@v3
         with:
           name: skin-restorer-artifacts
-          path: build/libs/merged
+          path: ./*/build/libs/**.jar
