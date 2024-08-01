@@ -10,7 +10,8 @@ plugins {
 }
 
 mixin {
-    config("${mod_id}.mixins.json")
+    add sourceSets.main, "${mod_id}.refmap.json"
+    config "${mod_id}.mixins.json"
 }
 
 minecraft {
@@ -58,6 +59,15 @@ dependencies {
 
     annotationProcessor('org.spongepowered:mixin:0.8.5-SNAPSHOT:processor')
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
+}
+
+// for some reason mixin plugin does not add 'MixinConfigs' to MANIFEST.MF so we do it manually
+jar {
+    manifest {
+        attributes([
+                'MixinConfigs': "${mod_id}.mixins.json"
+        ])
+    }
 }
 
 sourceSets.each {
