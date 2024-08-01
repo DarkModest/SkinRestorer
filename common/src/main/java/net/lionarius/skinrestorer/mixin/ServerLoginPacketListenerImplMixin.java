@@ -7,10 +7,8 @@ import net.lionarius.skinrestorer.skin.provider.MojangSkinProvider;
 import net.lionarius.skinrestorer.skin.provider.SkinProviderContext;
 import net.lionarius.skinrestorer.util.PlayerUtils;
 import net.lionarius.skinrestorer.util.Result;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerLoginPacketListenerImpl;
 import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -25,8 +23,6 @@ public abstract class ServerLoginPacketListenerImplMixin {
     
     @Shadow @Nullable
     private GameProfile authenticatedProfile;
-    @Shadow @Final
-    MinecraftServer server;
     
     @Unique
     private CompletableFuture<Void> skinrestorer_pendingSkin;
