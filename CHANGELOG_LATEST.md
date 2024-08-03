@@ -1,4 +1,5 @@
 ### Added
-- Added Traditional Chinese translation ([#24](https://github.com/Suiranoil/SkinRestorer/pull/24)) - *yichifauzi*, *notlin4*
-### Fixed
-- Fixed concurrent modification exception
+- Backported to minecraft 1.20-1.20.2
+- [Forge] Added support for Forge
+### Changed
+- Changed minimum java version to 17 for minecraft 1.20-1.20.4
