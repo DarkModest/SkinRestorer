@@ -27,8 +27,8 @@ publishMods {
     modrinth {
         projectId = modrinth_id
 
-        dryRun = providers.environmentVariable("MODRINTH_API_KEY").getOrNull() == null
-        accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+        dryRun = providers.environmentVariable("MODRINTH_TOKEN").getOrNull() == null
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
 
         minecraftVersions.addAll(minecraft_version_list.split(','))
     }
