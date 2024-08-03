@@ -19,8 +19,7 @@ public final class WebUtils {
     public static final String USER_AGENT;
     
     static {
-        var date = new Date();
-        USER_AGENT = String.format("SkinRestorer/%d", date.getTime() % 65535);
+        USER_AGENT = String.format("SkinRestorer/%d", System.currentTimeMillis() % 65535);
         
         var builder = HttpClient.newBuilder();
         var proxy = SkinRestorer.getConfig().getProxy();
