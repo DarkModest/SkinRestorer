@@ -1,43 +1,42 @@
 plugins {
     id 'multiloader-loader'
-    id 'net.neoforged.moddev'
-    
+    id 'idea'
+    id 'eclipse'
+
+    id 'net.neoforged.gradle.userdev'
+
     id 'multiloader-publish'
 }
 
-neoForge {
-    version = neoforge_version
-    // Automatically enable neoforge AccessTransformers if the file exists
-    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
-    if (at.exists()) {
-        accessTransformers.add(at.absolutePath)
-    }
+// Automatically enable neoforge AccessTransformers if the file exists
+def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+if (at.exists()) {
+    minecraft.accessTransformers.file(at)
+}
 
+subsystems {
     parchment {
         minecraftVersion = parchment_minecraft
         mappingsVersion = parchment_version
     }
+}
 
-    runs {
-        configureEach {
-            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
-            ideName = "NeoForge ${it.name.capitalize()} (${project.path})" // Unify the run config names with fabric
-        }
-
-        client {
-            client()
-            gameDirectory = file('../run/client')
-        }
-
-        server {
-            server()
-            gameDirectory = file('../run/server')
-        }
+runs {
+    configureEach {
+        modSource project.sourceSets.main
+        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
     }
 
-    mods {
-        "${mod_id}" {
-            sourceSet sourceSets.main
-        }
+    client {
+        workingDirectory = file('../run/client')
     }
+
+    server {
+        programArgument '--nogui'
+        workingDirectory = file('../run/server')
+    }
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neoforge_version}"
 }
